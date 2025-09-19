@@ -1,42 +1,158 @@
-#root {
-  max-width: 1280px;
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .card {
-  padding: 2em;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.read-the-docs {
-  color: #888;
+h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff; /* <<< agora sempre branco */
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-green {
+  background: #25d366;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-green:hover {
+  background: #1ebe57;
+}
+
+.link-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.link-box input {
+  flex: 1;
+  background: #fff; /* <<< branco também no campo do link */
+}
+
+.btn-small {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.contacts {
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contato-nome {
+  font-weight: 600;
+}
+
+.contato-numero {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-actions button {
+  margin-left: 6px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.contact-actions button:hover {
+  background: #f0f0f0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #25d366; /* verde WhatsApp */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
