@@ -36,6 +36,7 @@ label {
   color: #333;
 }
 
+/* --- áreas para digitar --- */
 input,
 textarea {
   width: 100%;
@@ -43,31 +44,12 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 0.95rem;
-  background-color: #fff; /* <<< agora sempre branco */
+  background-color: #fff; 
 }
 
 textarea {
   resize: none;
   height: 80px;
-}
-
-button {
-  border: none;
-  border-radius: 6px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.btn-green {
-  background: #25d366;
-  color: white;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.btn-green:hover {
-  background: #1ebe57;
 }
 
 .link-box {
@@ -79,55 +61,20 @@ button {
 
 .link-box input {
   flex: 1;
-  background: #fff; /* <<< branco também no campo do link */
+  background: #fff; 
 }
 
+/* --- botão copiar e salvar na agenda --- */
 .btn-small {
   padding: 8px 12px;
   font-size: 0.85rem;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
   background: #fff;
   cursor: pointer;
   border-radius: 6px;
 }
 
-.contacts {
-  margin-top: 15px;
-}
-
-.contact-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.contato-nome {
-  font-weight: 600;
-}
-
-.contato-numero {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.contact-actions button {
-  margin-left: 6px;
-  padding: 5px 10px;
-  font-size: 0.85rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #fff;
-}
-
-.contact-actions button:hover {
-  background: #f0f0f0;
-}
-
+/* --- Cabeçalho --- */
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -136,7 +83,7 @@ button {
 .header h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #25d366; /* verde WhatsApp */
+  color: #25d366;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;

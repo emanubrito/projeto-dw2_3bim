@@ -1,5 +1,6 @@
 import React from "react";
-import ContactAgenda from "./components/ContatoAgenda";
+import ContactForm from "./components/ContactForm";
+import LinkGenerator from "./components/LinkGenerator";
 import "./App.css";
 
 export default function App() {
@@ -17,7 +18,8 @@ export default function App() {
       </header>
 
       <div className="container">
-        <ContactAgenda />
+        <LinkGenerator />
+        <ContactForm />
       </div>
     </div>
   );
