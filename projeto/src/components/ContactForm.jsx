@@ -7,6 +7,27 @@ export default function AgendaContatos() {
     { id: 1, nome: "João", telefone: "(44) 91234-1234" },
   ]);
 
+  // mascara de número
+  const handleNumeroChange = (e) => {
+    let raw = e.target.value.replace(/\D/g, ""); 
+
+    let formatted = "";
+
+    if (raw.length > 0) {
+      if (raw.length <= 2) {
+        formatted = `(${raw}`;
+      } else if (raw.length <= 6) {
+        formatted = `(${raw.slice(0, 2)}) ${raw.slice(2)}`;
+      } else if (raw.length <= 10) {
+        formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 6)}-${raw.slice(6)}`;
+      } else {
+        formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 7)}-${raw.slice(7, 11)}`;
+      }
+    }
+
+    setNumero(formatted);
+  };
+
   const adicionarContato = () => {
     if (!nome || !numero) return;
 
@@ -40,7 +61,7 @@ export default function AgendaContatos() {
           type="text"
           placeholder="Número"
           value={numero}
-          onChange={(e) => setNumero(e.target.value)}
+          onChange={handleNumeroChange}
         />
       </div>
 
@@ -49,14 +70,14 @@ export default function AgendaContatos() {
       </button>
 
       <h3>Seus Contatos ({contatos.length})</h3>
-      <div >
+      <div className="contacts">
         {contatos.map((contato) => (
-          <div key={contato.id}>
+          <div key={contato.id} className="contact-item">
             <div>
-              <div >{contato.nome}</div>
-              <div >{contato.telefone}</div>
+              <div className="contato-nome">{contato.nome}</div>
+              <div className="contato-numero">{contato.telefone}</div>
             </div>
-            <div >
+            <div className="contact-actions">
               <button>Mensagem</button>
               <button>Editar</button>
               <button onClick={() => removerContato(contato.id)}>Excluir</button>

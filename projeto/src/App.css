@@ -103,3 +103,59 @@ textarea {
   line-height: 1.5;
 }
 
+
+
+.contacts {
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contato-nome {
+  font-weight: 600;
+}
+
+.contato-numero {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-actions button {
+  margin-left: 6px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.contact-actions button:hover {
+  background: #f0f0f0;
+}
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-green {
+  background: #25d366;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-green:hover {
+  background: #1ebe57;
+}
