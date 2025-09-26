@@ -1,55 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../supabaseClients";
 
 export default function AgendaContatos() {
   const [nome, setNome] = useState("");
   const [numero, setNumero] = useState("");
-  const [contatos, setContatos] = useState([
-    { id: 1, nome: "João", telefone: "(44) 91234-1234" },
-  ]);
+  const [contatos, setContatos] = useState([]);
 
-  // mascara de número
+  // Carregar contatos do Supabase
+  useEffect(() => {
+    fetchContatos();
+  }, []);
+
+  const fetchContatos = async () => {
+    const { data, error } = await supabase
+      .from("contatos")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) console.log("Erro ao buscar contatos:", error);
+    else setContatos(data);
+  };
+
+  // Máscara de número
   const handleNumeroChange = (e) => {
     let raw = e.target.value.replace(/\D/g, ""); 
-
     let formatted = "";
 
     if (raw.length > 0) {
-      if (raw.length <= 2) {
-        formatted = `(${raw}`;
-      } else if (raw.length <= 6) {
-        formatted = `(${raw.slice(0, 2)}) ${raw.slice(2)}`;
-      } else if (raw.length <= 10) {
-        formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 6)}-${raw.slice(6)}`;
-      } else {
-        formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 7)}-${raw.slice(7, 11)}`;
-      }
+      if (raw.length <= 2) formatted = `(${raw}`;
+      else if (raw.length <= 6) formatted = `(${raw.slice(0, 2)}) ${raw.slice(2)}`;
+      else if (raw.length <= 10) formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 6)}-${raw.slice(6)}`;
+      else formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 7)}-${raw.slice(7, 11)}`;
     }
 
     setNumero(formatted);
   };
 
-  const adicionarContato = () => {
+  // Adicionar contato no Supabase
+  const adicionarContato = async () => {
     if (!nome || !numero) return;
 
-    const novoContato = {
-      id: Date.now(),
-      nome,
-      telefone: numero,
-    };
+    const { data, error } = await supabase
+      .from("contatos")
+      .insert([{ nome, telefone: numero }]);
 
-    setContatos([...contatos, novoContato]);
+    if (error) console.log("Erro ao adicionar contato:", error);
+    else setContatos([data[0], ...contatos]);
+
     setNome("");
     setNumero("");
   };
 
-  const removerContato = (id) => {
-    setContatos(contatos.filter((contato) => contato.id !== id));
+  // Remover contato do Supabase
+  const removerContato = async (id) => {
+    const { error } = await supabase.from("contatos").delete().eq("id", id);
+    if (error) console.log("Erro ao remover contato:", error);
+    else setContatos(contatos.filter((c) => c.id !== id));
   };
 
   return (
     <section className="card">
       <h2>Agenda de Contatos</h2>
-
       <div className="form-row">
         <input
           type="text"
@@ -64,7 +75,6 @@ export default function AgendaContatos() {
           onChange={handleNumeroChange}
         />
       </div>
-
       <button className="btn-small" onClick={adicionarContato}>
         Salvar na Agenda
       </button>
