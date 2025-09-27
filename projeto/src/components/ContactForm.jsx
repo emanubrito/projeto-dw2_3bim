@@ -38,18 +38,23 @@ export default function AgendaContatos() {
 
   // Adicionar contato no Supabase
   const adicionarContato = async () => {
-    if (!nome || !numero) return;
+  if (!nome || !numero) return;
 
-    const { data, error } = await supabase
-      .from("contatos")
-      .insert([{ nome, telefone: numero }]);
+  const { data, error } = await supabase
+    .from("contatos")
+    .insert([{ nome, telefone: numero }])
+    .select(); // <- importante!
 
-    if (error) console.log("Erro ao adicionar contato:", error);
-    else setContatos([data[0], ...contatos]);
+  if (error) {
+    console.log("Erro ao adicionar contato:", error);
+  } else {
+    setContatos([data[0], ...contatos]); // agora data[0] existe
+  }
 
-    setNome("");
-    setNumero("");
-  };
+  setNome("");
+  setNumero("");
+};
+
 
   // Remover contato do Supabase
   const removerContato = async (id) => {
