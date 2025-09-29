@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { supabase } from "../supabaseClients";
+import { supabase } from "../../supabaseClients";
 
 export default function AgendaContatos() {
   const [nome, setNome] = useState("");
@@ -66,21 +66,21 @@ export default function AgendaContatos() {
   return (
     <section className="card">
       <h2>Agenda de Contatos</h2>
-      <div className="form-row">
-        <input
+      <div>
+        <input className="nomecontato"
           type="text"
           placeholder="Nome do contato"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         />
-        <input
+        <input className="nomecontato"
           type="text"
           placeholder="Número"
           value={numero}
           onChange={handleNumeroChange}
         />
       </div>
-      <button className="btn-small" onClick={adicionarContato}>
+      <button className="nomecontato" onClick={adicionarContato}>
         Salvar na Agenda
       </button>
 
