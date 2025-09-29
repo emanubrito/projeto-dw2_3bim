@@ -114,7 +114,10 @@ export default function AgendaContatos() {
 
   return (
     <section className="card">
-      <h2>Agenda de Contatos</h2>
+     
+
+      <h2>
+Agenda de Contatos</h2>
 
       <div className="form-row">
         <input
@@ -152,8 +155,8 @@ export default function AgendaContatos() {
               <button type="button" onClick={() => abrirEdicao(contato)}>
                 Editar
               </button>
-              <button className="button-excluir" onClick={() => removerContato(contato.id)}>
-                Excluir
+              <button className="button-excluir" onClick={() => removerContato(contato.id)} >
+              <span class="material-symbols-outlined">delete</span>
               </button>
             </div>
           </div>
