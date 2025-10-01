@@ -302,3 +302,36 @@ button {
     transform: translateY(0);
   }
 }
+
+/*icon do telefone no input do LinkGenerator */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-with-icon svg {
+  position: absolute;
+  left: 8px;
+  color: #555;
+  width: 16px;
+  height: 16px;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding-left: 32px; 
+  height: 28px;       
+  font-size: 14px;    
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+/*Deixa o Icon alinhado */
+.com-icone {
+  display: flex;
+  align-items: center; 
+  gap: 8px;            
+}

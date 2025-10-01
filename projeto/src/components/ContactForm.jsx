@@ -116,7 +116,7 @@ export default function AgendaContatos() {
     <section className="card">
      
 
-      <h2>Agenda de Contatos</h2>
+      <h2 className="com-icone"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b303" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-icon lucide-circle-user"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>Agenda de Contatos</h2>
 
       <div className="form-row">
         <input
@@ -135,9 +135,9 @@ export default function AgendaContatos() {
         />
       </div>
 
-      <button className="btn-small" onClick={adicionarContato}>
+      <button className="btn-small com-icone" onClick={adicionarContato}>
        <span class="material-symbols-outlined">person_add</span>
-      Salvar na Agenda
+       Salvar na Agenda
       </button>
 
       <h3>Seus Contatos ({contatos.length})</h3>
@@ -151,11 +151,16 @@ export default function AgendaContatos() {
             </div>
 
             <div className="contact-actions">
-             
+
+              {/* botão enviar mensagem */}
               <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00b859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg></button>
+
+              {/* botão editar */}
               <button type="button" onClick={() => abrirEdicao(contato)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00b859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
               </button>
+
+              {/* botão excluir */}
               <button className="button-excluir" onClick={() => removerContato(contato.id)} >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b80000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
               </button>
@@ -167,7 +172,11 @@ export default function AgendaContatos() {
       {editando && (
         <div className="modal" role="dialog" aria-modal="true">
           <div className="modal-content">
-            <h3>Editar Contato</h3>
+            
+            <h3 className="com-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00b303" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+              Editar Contato 
+            </h3>
 
             <input
               type="text"
