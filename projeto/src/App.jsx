@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ContactForm from "./components/ContactForm";
 import LinkGenerator from "./components/LinkGenerator";
+import { supabase } from './supabaseClient';
 import "./App.css";
 
 export default function App() {
