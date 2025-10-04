@@ -101,10 +101,17 @@ textarea {
   padding: 8px 12px;
   width: 95%;
   font-size: 0.85rem;
-  border: 1px solid #555;
-  background: #fff;
+  border: 2px solid #25d366;
+  background: #25d366;
   cursor: pointer;
   border-radius: 6px;
+  color: #fff;
+}
+
+.btn-small:hover{
+    background: #f1fff6;
+  color: #199400;
+  border: solid 2px #199;
 }
 
 /* --- Cabeçalho --- */
@@ -192,7 +199,7 @@ textarea {
 }
 
 .contact-actions .button-excluir:hover {
-   border: 2px solid #ff0000;
+  border: 2px solid #ff0000;
   color: #ffffff;
   background: #ff0000;
 }
@@ -209,13 +216,16 @@ button {
 
 .btn-green {
   background: #25d366;
+  border: solid 2px #25d366;
   color: white;
   width: 100%;
   margin-top: 15px;
 }
 
 .btn-green:hover {
-  background: #1ebe57;
+  background: #f1fff6;
+  color: #199400;
+  border: solid 2px #199400;
 }
 
 .modal {

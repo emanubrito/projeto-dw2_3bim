@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function GeradorLink() {
+export default function GeradorLink({ numeroInicial = "" }) {
   const [telefone, setTelefone] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [link, setLink] = useState("");
+
+  // quando o número vindo da lista mudar, atualiza o campo automaticamente
+  useEffect(() => {
+    if (numeroInicial) setTelefone(numeroInicial);
+  }, [numeroInicial]);
+
 
   // mascara que formata o número enquanto o usuário digita
   const handleTelefoneChange = (e) => {
