@@ -345,3 +345,29 @@ button {
   align-items: center; 
   gap: 8px;            
 }
+
+.contacts {
+  max-height: 250px;
+  overflow-y: auto;    /* ativa a rolagem */
+  padding-right: 8px;
+}
+
+.contacts::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contacts::-webkit-scrollbar-thumb {
+  background: #40c771;
+  border-radius: 4px;
+}
+
+.contacts::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* aleta de copiar*/
+.copiado-msg {
+  color: #25d366;
+  font-size: 14px;
+  margin-left: 8px;
+}

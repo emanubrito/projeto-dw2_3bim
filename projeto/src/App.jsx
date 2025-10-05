@@ -6,8 +6,6 @@ import { supabase } from './supabaseClients';
 import "./App.css";
 
 export default function App() {
-
-  const [numeroSelecionado, setNumeroSelecionado] = useState("");
   return (
     <div>
       <header className="header">
@@ -22,7 +20,7 @@ export default function App() {
       </header>
 
       <div className="container">
-        <ContactList numeroSelecionado={numeroSelecionado} setNumeroSelecionado={setNumeroSelecionado} />
+        <ContactList/>
         <ContactForm />
       </div>
     </div>

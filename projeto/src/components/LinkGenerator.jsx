@@ -4,6 +4,7 @@ export default function GeradorLink({ numeroInicial = "" }) {
   const [telefone, setTelefone] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [link, setLink] = useState("");
+  const [copiado, setCopiado] = useState(false);
 
   // quando o número vindo da lista mudar, atualiza o campo automaticamente
   useEffect(() => {
@@ -49,7 +50,10 @@ export default function GeradorLink({ numeroInicial = "" }) {
 
   const copiarLink = () => {
     if (!link) return;
-    navigator.clipboard.writeText(link);
+    navigator.clipboard.writeText(link).then(() => {
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000); // pra sumir depois de 2s
+    });
   };
 
   const abrirWhatsApp = () => {
@@ -96,6 +100,7 @@ export default function GeradorLink({ numeroInicial = "" }) {
         <button className="" onClick={copiarLink}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
         </button>
+        {copiado && <span className="copiado-msg">Link copiado!</span>}
       </div>
 
       <button className="btn-green" onClick={abrirWhatsApp} disabled={!link}>
