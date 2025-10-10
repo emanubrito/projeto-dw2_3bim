@@ -1,0 +1,85 @@
+/*---- Modal para o botão editar na Agenda de Contatos  ----*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  width: 360px;
+  max-width: 95%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.modal-actions button:first-child {
+  background: #25d366;
+  color: white;
+  border: solid 2px #25d366;
+}
+
+.modal-actions button:first-child:hover {
+  background: #ffffff;
+  color: #25d366;
+  border: solid 2px #25d366;
+}
+
+.modal-actions button:last-child {
+  background: #ff0000;
+  color: white;
+  border: solid 2px #ff0000;
+}
+
+.modal-actions button:last-child:hover {
+  background: #ffffff;
+  color: #ff0000;
+  border: solid 2px #ff0000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

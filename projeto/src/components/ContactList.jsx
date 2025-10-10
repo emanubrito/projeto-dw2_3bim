@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ContatoList from "./ContactItem";
-import GeradorLink from "./LinkGenerator";
 import { supabase } from "../supabaseClients";
 
 export default function ContactList({ numeroSelecionado, setNumeroSelecionado }) {
@@ -31,7 +30,7 @@ export default function ContactList({ numeroSelecionado, setNumeroSelecionado })
   };
 
   const abrirEdicao = (contato) => {
-    z
+    
   };
 
   const abrirMensagem = (telefone) => {
@@ -47,7 +46,6 @@ export default function ContactList({ numeroSelecionado, setNumeroSelecionado })
         abrirMensagem={abrirMensagem}
       />
 
-      <GeradorLink numeroInicial={numeroSelecionado} />
     </div>
   );
 }

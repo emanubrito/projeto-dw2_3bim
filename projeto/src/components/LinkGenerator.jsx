@@ -52,7 +52,7 @@ export default function GeradorLink({ numeroInicial = "" }) {
     if (!link) return;
     navigator.clipboard.writeText(link).then(() => {
       setCopiado(true);
-      setTimeout(() => setCopiado(false), 2000); // pra sumir depois de 2s
+      setTimeout(() => setCopiado(false), 2000); // para sumir depois de 2s
     });
   };
 

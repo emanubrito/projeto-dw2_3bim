@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../../supabaseClients";
 import ContatoList from "./ContactItem";
+import EditContact from "./EditContact";
 
 export default function AgendaContatos() {
   const [nome, setNome] = useState("");
@@ -10,8 +11,6 @@ export default function AgendaContatos() {
   // estados para edição
   const [editando, setEditando] = useState(false);
   const [contatoAtual, setContatoAtual] = useState(null);
-  const [editNome, setEditNome] = useState("");
-  const [editNumero, setEditNumero] = useState("");
 
   useEffect(() => {
     fetchContatos();
@@ -76,41 +75,7 @@ export default function AgendaContatos() {
 
   const abrirEdicao = (contato) => {
     setContatoAtual(contato);
-    setEditNome(contato.nome || "");
-    setEditNumero(contato.telefone || "");
     setEditando(true);
-  };
-
-  const cancelarEdicao = () => {
-    setEditando(false);
-    setContatoAtual(null);
-    setEditNome("");
-    setEditNumero("");
-  };
-
-  const salvarEdicao = async () => {
-    if (!contatoAtual) return;
-    if (!editNome.trim() || !editNumero.trim()) return;
-
-    const { error } = await supabase
-      .from("contatos")
-      .update({ nome: editNome.trim(), telefone: editNumero.trim() })
-      .eq("id", contatoAtual.id);
-
-    if (error) {
-      console.error("Erro ao editar contato:", error);
-      return;
-    }
-
-    setContatos((prev) =>
-      prev.map((c) =>
-        c.id === contatoAtual.id
-          ? { ...c, nome: editNome.trim(), telefone: editNumero.trim() }
-          : c
-      )
-    );
-
-    cancelarEdicao();
   };
 
   return (
@@ -149,39 +114,14 @@ export default function AgendaContatos() {
         abrirEdicao={abrirEdicao}
         onEnviarMensagem={(numero) => onSelecionarNumero(numero)}
       />
-      {editando && (
-        <div className="modal" role="dialog" aria-modal="true">
-          <div className="modal-content">
-            
-            <h3 className="com-icone">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00b303" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen-icon lucide-square-pen"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
-              Editar Contato 
-            </h3>
-
-            <input
-              type="text"
-              placeholder="Nome"
-              value={editNome}
-              onChange={(e) => setEditNome(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Número"
-              value={editNumero}
-              onChange={handleEditNumeroChange}
-            />
-
-            <div className="modal-actions">
-              <button type="button" onClick={salvarEdicao}>
-                Salvar
-              </button>
-              <button type="button" onClick={cancelarEdicao}>
-                Cancelar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <EditContact
+        contatoAtual={contatoAtual}
+        setContatoAtual={setContatoAtual}
+        editando={editando}
+        setEditando={setEditando}
+        setContatos={setContatos}
+        formatTelefone={formatTelefone}
+      />
     </section>
   );
 }
