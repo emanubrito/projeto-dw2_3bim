@@ -35,7 +35,8 @@ label {
   font-weight: 500;
   color: #333;
 }
-/*----------------------- */
+
+/*---- Botões nome e número da Agenda ---- */
 .nomecontato {
   width: 30%;
   border: 1px solid #e7e7e7;
@@ -47,7 +48,7 @@ label {
 }
 
 .numerocontato {
- width: 40%;
+  width: 40%;
   padding: 10px;
   border: 1px solid #e7e7e7;
   border-radius: 6px;
@@ -58,7 +59,7 @@ label {
 }
 
 
-/* --- áreas para digitar --- */
+/* --- áreas de digitar --- */
 input,
 textarea {
   width: 95%;
@@ -109,12 +110,12 @@ textarea {
 }
 
 .btn-small:hover{
-    background: #f1fff6;
+  background: #f1fff6;
   color: #199400;
   border: solid 2px #199;
 }
 
-/* --- Cabeçalho --- */
+/* ---- Cabeçalho ---- */
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -130,7 +131,8 @@ textarea {
   align-items: center;
   gap: 8px;
 
-   background: linear-gradient(to right, #199400, #00ff73);
+  /*Deixando o cabeçalho com degrade*/
+  background: linear-gradient(to right, #199400, #00ff73); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -147,6 +149,7 @@ textarea {
   line-height: 1.5;
 }
 
+/* ---- Contatos da Agenda ----*/
 .contacts {
   margin-top: 15px;
 }
@@ -170,6 +173,7 @@ textarea {
   color: #666;
 }
 
+/*---- Icons botões do contato ----*/
 .contact-actions button {
   margin-left: 6px;
   padding: 1px 3px;
@@ -202,7 +206,7 @@ textarea {
   background: #ff0000;
 }
 
-
+/*---- Botões PrepararMsg e abrir WhatsApp ----*/
 button {
   border: none;
   border-radius: 6px;
@@ -210,7 +214,6 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
-
 
 .btn-green {
   background: #25d366;
@@ -226,6 +229,7 @@ button {
   border: solid 2px #199400;
 }
 
+/*---- Modal para o botão editar na Agenda de Contatos  ----*/
 .modal {
   position: fixed;
   top: 0;
@@ -311,7 +315,7 @@ button {
   }
 }
 
-/*icon do telefone no input do LinkGenerator */
+/*---- icon do telefone no input do LinkGenerator ----*/
 .input-with-icon {
   position: relative;
   display: flex;
@@ -337,7 +341,7 @@ button {
   background-color: #fcfcfc;
 }
 
-/*Deixa o Icon alinhado */
+/*---- Deixa o Icon alinhado ----*/
 .com-icone {
   display: flex;
   align-items: center; 
@@ -363,7 +367,7 @@ button {
   background: #f1f1f1;
 }
 
-/* aleta de copiar*/
+/*---- alerta de copiar ----*/
 .copiado-msg {
   color: #25d366;
   font-size: 14px;
