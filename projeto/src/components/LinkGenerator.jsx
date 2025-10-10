@@ -44,7 +44,7 @@ export default function GeradorLink({ numeroInicial = "" }) {
       ? numeroLimpo
       : "55" + numeroLimpo;
 
-    const texto = mensagem ? `?text=${encodeURIComponent(mensagem)}` : "";
+    const texto = mensagem ? `?text=${encodeURIComponent(mensagem)}` : ""; // Codifica a mensagem usando encodeURIComponent
     setLink(`https://wa.me/${numeroCompleto}${texto}`);
   };
 

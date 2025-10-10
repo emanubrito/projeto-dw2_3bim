@@ -100,19 +100,21 @@ textarea {
 /* --- botão copiar e salvar na agenda --- */
 .btn-small {
   padding: 8px 12px;
-  width: 95%;
+  width: 40%;
   font-size: 0.85rem;
-  border: 2px solid #25d366;
+  border: 2px solid ;
   background: #25d366;
   cursor: pointer;
   border-radius: 6px;
   color: #fff;
+
+  background: linear-gradient(135deg, #01973f, #00e974);
 }
 
 .btn-small:hover{
   background: #f1fff6;
   color: #199400;
-  border: solid 2px #199;
+  border: solid 2px #199400;
 }
 
 /* ---- Cabeçalho ---- */
@@ -217,10 +219,12 @@ button {
 
 .btn-green {
   background: #25d366;
-  border: solid 2px #25d366;
+  border: solid 2px;
   color: white;
   width: 100%;
   margin-top: 15px;
+
+  background: linear-gradient(135deg, #01973f, #00e974);
 }
 
 .btn-green:hover {
