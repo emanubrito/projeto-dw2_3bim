@@ -20,7 +20,7 @@ export default function App() {
       </header>
 
       <div className="container">
-        <ContactList/>
+        <GeradorLink/>
         <ContactForm />
       </div>
     </div>

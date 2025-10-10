@@ -31,8 +31,7 @@ export default function ContactList({ numeroSelecionado, setNumeroSelecionado })
   };
 
   const abrirEdicao = (contato) => {
-    console.log("Editar contato:", contato);
-    // aqui você pode abrir um modal ou passar os dados pro ContactForm
+    z
   };
 
   const abrirMensagem = (telefone) => {
