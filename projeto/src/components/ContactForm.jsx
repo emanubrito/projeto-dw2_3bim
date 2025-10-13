@@ -133,16 +133,17 @@ export default function AgendaContatos() {
           <option value="Família">Família</option>
           <option value="Trabalho">Trabalho</option>
           <option value="Amigos">Amigos</option>
-          <option value="Outros">Outros</option>
+          <option value="Escola">Escola</option>
         </select>
       </div>
 
-      <div className="salvar-container">
-        <button className="btn-small com-icone" onClick={adicionarContato}>
-        <span className="material-symbols-outlined">person_add</span>
         Salvar na Agenda
-        </button>
-      </div>
+      
+      <button className="btn-small com-icone" onClick={adicionarContato}>
+      <span className="material-symbols-outlined">person_add</span>
+      Salvar na Agenda
+      </button>
+ 
 
       {/* 🔹 Filtro de categorias */}
       <FiltroCategoria

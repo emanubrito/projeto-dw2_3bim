@@ -42,7 +42,7 @@ label {
   border: 1px solid #e7e7e7;
   border-radius: 6px;
   font-size: 0.95rem;
-  background-color: #f7f7f7;
+  background-color: #fcfcfc;
   margin-bottom: 20px;
   gap: 24px;
 }
@@ -53,7 +53,7 @@ label {
   border: 1px solid #e7e7e7;
   border-radius: 6px;
   font-size: 0.95rem;
-  background-color: #f7f7f7;
+  background-color: #fcfcfc;
   margin-bottom: 20px;
   gap: 24px;
 }
@@ -67,7 +67,7 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 0.95rem;
-  background-color: #fff; 
+  background-color: #fcfcfc;
 }
 
 textarea {
@@ -84,7 +84,7 @@ textarea {
 
 .link-box input {
   flex: 1;
-  background: #fff; 
+  background-color: #fcfcfc;
 }
 .form-row {
   display: flex;
@@ -157,6 +157,8 @@ textarea {
 }
 
 .contact-item {
+  background-color: #fcfcfc;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -267,6 +269,13 @@ button {
   gap: 8px;            
 }
 
+.com-icone-centro {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 8px;            
+}
+
 .contacts {
   max-height: 250px;
   overflow-y: auto;    /* ativa a rolagem */
@@ -293,9 +302,3 @@ button {
   margin-left: 8px;
 }
 
-.salvar-container {
-  display: flex;
-  justify-content: center;  /* centraliza horizontalmente */
- /* centraliza verticalmente se tiver altura fixa */
-  margin-top: 15px;          /* dá um pequeno espaço acima */
-}

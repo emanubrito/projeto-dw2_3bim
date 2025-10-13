@@ -12,14 +12,14 @@ export default function EditContact({
 }) {
   const [editNome, setEditNome] = useState("");
   const [editNumero, setEditNumero] = useState("");
-  const [editCategoria, setEditCategoria] = useState(""); // 🔹 novo estado
+  const [editCategoria, setEditCategoria] = useState(""); // novo estado
 
-  // 🔹 sempre que o contatoAtual mudar, preencher os campos
+  // sempre que o contatoAtual mudar, preencher os campos
   useEffect(() => {
     if (contatoAtual) {
       setEditNome(contatoAtual.nome || "");
       setEditNumero(contatoAtual.telefone || "");
-      setEditCategoria(contatoAtual.categoria || ""); // 🔹 preencher categoria
+      setEditCategoria(contatoAtual.categoria || ""); // preencher categoria
     }
   }, [contatoAtual]);
 
@@ -35,7 +35,7 @@ export default function EditContact({
     if (!contatoAtual) return;
     if (!editNome.trim() || !editNumero.trim() || !editCategoria.trim()) return;
 
-    // 🔹 Atualiza no banco Supabase
+    // Atualiza no banco Supabase
     const { error } = await supabase
       .from("contatos")
       .update({
@@ -50,7 +50,7 @@ export default function EditContact({
       return;
     }
 
-    // 🔹 Atualiza a lista localmente
+    // Atualiza a lista localmente
     setContatos((prev) =>
       prev.map((c) =>
         c.id === contatoAtual.id
@@ -113,7 +113,7 @@ export default function EditContact({
           <option value="Família">Família</option>
           <option value="Trabalho">Trabalho</option>
           <option value="Amigos">Amigos</option>
-          <option value="Outros">Outros</option>
+          <option value="Escola">Escola</option>
         </select>
 
         <div className="modal-actions">
