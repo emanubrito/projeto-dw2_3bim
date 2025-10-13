@@ -73,6 +73,16 @@
   border: solid 2px #ff0000;
 }
 
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
