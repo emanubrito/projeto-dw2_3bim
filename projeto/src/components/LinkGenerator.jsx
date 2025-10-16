@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "../styles/LinkGenerator.css";
+
 
 export default function GeradorLink({ numeroInicial = "" }) {
   const [telefone, setTelefone] = useState("");

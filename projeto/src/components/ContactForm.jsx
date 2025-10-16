@@ -3,6 +3,7 @@ import { supabase } from "../../supabaseClients";
 import ContatoList from "./ContactItem";
 import EditContact from "./EditContact";
 import FiltroCategoria from "./FiltroCategoria";
+import "../styles/ContactForm.css";
 
 export default function AgendaContatos() {
   const [nome, setNome] = useState("");
@@ -136,8 +137,6 @@ export default function AgendaContatos() {
           <option value="Escola">Escola</option>
         </select>
       </div>
-
-        Salvar na Agenda
       
       <button className="btn-small com-icone" onClick={adicionarContato}>
       <span className="material-symbols-outlined">person_add</span>

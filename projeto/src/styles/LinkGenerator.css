@@ -1,0 +1,72 @@
+input,
+textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fcfcfc;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/*---- Botões PrepararMsg e abrir WhatsApp ----*/
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-green {
+  background: #25d366;
+  border: solid 2px;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+
+  background: linear-gradient(135deg,  #00af49, #00e974);
+}
+
+.btn-green:hover {
+  background: #f1fff6;
+  color: #199400;
+  border: solid 2px #199400;
+}
+
+/*---- alerta de copiar ----*/
+.copiado-msg {
+  color: #25d366;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+/*---- icon do telefone no input do LinkGenerator ----*/
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-with-icon svg {
+  position: absolute;
+  left: 8px;
+  color: #555;
+  width: 16px;
+  height: 16px;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding-left: 32px; 
+  height: 28px;       
+  font-size: 14px;    
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
