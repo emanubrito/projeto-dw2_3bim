@@ -141,3 +141,35 @@
 .contacts::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
+/* --- alertas ---*/
+
+.alerta-msg {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  opacity: 0;
+  animation: fadeInOut 2s ease;
+  transition: opacity 0.3s;
+}
+
+.alerta-msg.sucesso {
+  color: #009912;
+}
+
+.alerta-msg.erro {
+  color: #b80000;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.salvar-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+

@@ -9,6 +9,7 @@ export default function EditContact({
   setEditando,
   setContatos,
   formatTelefone,
+  onEditSave,
 }) {
   const [editNome, setEditNome] = useState("");
   const [editNumero, setEditNumero] = useState("");
@@ -65,6 +66,8 @@ export default function EditContact({
     );
 
     cancelarEdicao();
+
+    if (onEditSave) onEditSave(); // aciona o alerta no ContactForm
   };
 
   if (!editando) return null; // só aparece se estiver editando

@@ -17,6 +17,11 @@ export default function AgendaContatos() {
   const [editando, setEditando] = useState(false);
   const [contatoAtual, setContatoAtual] = useState(null);
 
+  // estados para alertas
+  const [alertaSalvar, setAlertaSalvar] = useState(false);
+  const [alertaEditar, setAlertaEditar] = useState(false);
+  const [alertaExcluir, setAlertaExcluir] = useState(false);
+
   useEffect(() => {
     fetchContatos();
   }, []);
@@ -66,6 +71,10 @@ export default function AgendaContatos() {
     setNome("");
     setNumero("");
     setCategoria("");
+
+    // mostra alerta de salvar
+    setAlertaSalvar(true);
+    setTimeout(() => setAlertaSalvar(false), 2000);
   };
 
   const removerContato = async (id) => {
@@ -75,11 +84,21 @@ export default function AgendaContatos() {
       return;
     }
     setContatos((prev) => prev.filter((c) => c.id !== id));
+
+    // mostra alerta de excluir
+    setAlertaExcluir(true);
+    setTimeout(() => setAlertaExcluir(false), 2000);
   };
 
   const abrirEdicao = (contato) => {
     setContatoAtual(contato);
     setEditando(true);
+  };
+
+  // passa função para receber alerta ao salvar edição
+  const handleEdicaoSalva = () => {
+    setAlertaEditar(true);
+    setTimeout(() => setAlertaEditar(false), 2000);
   };
 
   // Filtragem dos contatos conforme categoria selecionada
@@ -137,14 +156,15 @@ export default function AgendaContatos() {
           <option value="Escola">Escola</option>
         </select>
       </div>
-      
-      <button className="btn-small com-icone" onClick={adicionarContato}>
-      <span className="material-symbols-outlined">person_add</span>
-      Salvar na Agenda
-      </button>
- 
 
-      {/* 🔹 Filtro de categorias */}
+      <div className="salvar-area">
+        <button className="btn-small com-icone" onClick={adicionarContato}>
+          <span className="material-symbols-outlined">person_add</span>
+          Salvar na Agenda
+        </button>
+        {alertaSalvar && <span className="alerta-msg sucesso">Contato salvo!</span>}
+      </div>
+
       <FiltroCategoria
         categoriaSelecionada={categoriaSelecionada}
         setCategoriaSelecionada={setCategoriaSelecionada}
@@ -161,6 +181,8 @@ export default function AgendaContatos() {
         removerContato={removerContato}
         abrirEdicao={abrirEdicao}
       />
+      {alertaExcluir && <span className="alerta-msg erro">Contato excluído!</span>}
+      {alertaEditar && <span className="alerta-msg sucesso">Contato editado!</span>}
 
       <EditContact
         contatoAtual={contatoAtual}
@@ -169,6 +191,7 @@ export default function AgendaContatos() {
         setEditando={setEditando}
         setContatos={setContatos}
         formatTelefone={formatTelefone}
+        onEditSave={handleEdicaoSalva} // <-- callback para acionar alerta
       />
     </section>
   );

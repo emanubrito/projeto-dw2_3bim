@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import ContactForm from "./components/ContactForm";
-import ContactList from "./components/ContactList";
 import GeradorLink from "./components/LinkGenerator";
-import { supabase } from './supabaseClients';
 import "./App.css";
 
 export default function App() {
