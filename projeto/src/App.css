@@ -84,4 +84,11 @@ label {
   gap: 8px;            
 }
 
+/* ---- responsividade ---- */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* apenas uma coluna no celular */
+    gap: 30px; /* um espacinho extra entre os blocos */
+  }
+}
 
