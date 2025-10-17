@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://projeto-dw2-3bim.onrender.com/" target="_blank">
+  <a href="https://projeto-dw2-3bim.onrender.com" target="_blank">
     🌐 <b>Acesse o projeto online</b>
   </a>
 </p>
