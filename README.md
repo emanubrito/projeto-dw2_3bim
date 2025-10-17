@@ -79,26 +79,32 @@ Isso permite que o usuário encontre contatos de forma rápida e prática.
 
 src/
 ├── components/
-│ ├── ContactForm.jsx
-│ ├── ContactItem.jsx
-│ ├── ContactList.jsx
-│ ├── EditContact.jsx
-│ ├── FiltroCategoria.jsx
-│ └── LinkGenerator.jsx
+│ ├── contacts/
+│   ├── ContactForm.jsx
+│   ├── ContactItem.jsx
+│   ├── ContactList.jsx
+│   ├── EditContact.jsx
+│   └── FiltroCategoria.jsx
 │
-├── styles/
-│ ├── ContactForm.css
-│ ├── EditContact.css
-│ ├── FiltroCategoria.css
-│ └── LinkGenerator.css
+│ ├── header/
+│   └── Header.jsx
 │
-├── supabaseClients/
-│ └── supabaseClients.js
+│ ├── link/
+│   └── LinkGenerator.jsx
 │
-├── App.jsx
+│ ├── styles/
+│   ├── ContactForm.css
+│   ├── ContactItem_List.css
+│   ├── EditContact.css
+│   ├── FiltroCategoria.css
+│   ├── Headerstyle.css
+│   └── LinkGenerator.css
+│
+├── supabaseClients.js
 ├── App.css
+├── App.jsx
 ├── main.jsx
-└── index.html
+└── supabaseClients.js
 
 
 ---
