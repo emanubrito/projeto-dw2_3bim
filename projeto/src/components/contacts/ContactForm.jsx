@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { supabase } from "../../supabaseClients";
+import { supabase } from "../../../supabaseClients";
 import ContatoList from "./ContactItem";
 import EditContact from "./EditContact";
 import FiltroCategoria from "./FiltroCategoria";
-import "../styles/ContactForm.css";
+import "../../styles/ContactForm.css";
 
 export default function AgendaContatos() {
   const [nome, setNome] = useState("");

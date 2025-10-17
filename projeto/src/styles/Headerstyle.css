@@ -1,0 +1,46 @@
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  /*Deixando o cabeçalho com degrade*/
+  background: linear-gradient(to right, #199400, #00ff73); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/*---- Deixa o Icon alinhado ----*/
+.com-icone {
+  display: flex;
+  align-items: center; 
+  gap: 8px;            
+}
+
+.com-icone-centro {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 8px;            
+}

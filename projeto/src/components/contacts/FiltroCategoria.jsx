@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/FiltroCategoria.css"
+import "../../styles/FiltroCategoria.css"
 
 export default function FiltroCategoria({ categoriaSelecionada, setCategoriaSelecionada }) {
   const categorias = ["Geral", "Família", "Trabalho", "Amigos", "Escola"];

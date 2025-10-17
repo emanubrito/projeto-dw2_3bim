@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContatoList from "./ContactItem";
-import { supabase } from "../supabaseClients";
+import { supabase } from "../../supabaseClients";
 
 export default function ContactList({ numeroSelecionado, setNumeroSelecionado }) {
   const [contatos, setContatos] = useState([]);

@@ -1,4 +1,6 @@
 import React from "react";
+import "../../styles/ContactItem_List.css";
+
 
 export default function ContatoList({ contatos, removerContato, abrirEdicao }) {
   return (

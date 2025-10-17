@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { supabase } from "../../supabaseClients";
-import "../styles/EditContact.css";
+import { supabase } from "../../../supabaseClients";
+import "../../styles/EditContact.css";
 
 export default function EditContact({
   contatoAtual,

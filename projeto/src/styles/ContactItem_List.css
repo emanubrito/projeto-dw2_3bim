@@ -1,0 +1,78 @@
+/* --- container de cada contato --- */
+.contact-item {
+  background-color: #fcfcfc;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contato-nome {
+  font-weight: 600;
+}
+
+.contato-numero {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/*---- Icons botões do contato ----*/
+.contact-actions button {
+  margin-left: 6px;
+  padding: 1px 3px;
+  font-size: 1rem;
+  border: 2px solid #25d366;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+  color: #25d366;
+  font-weight: bold;
+}
+
+.contact-actions button:hover {
+  background: #25d366;
+  color: #fff;
+  border: 2px solid #25d366;
+}
+
+.contact-actions .button-excluir {
+  background: #ffffff;
+  color: #ff0000;
+  border: 2px solid #b80000;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact-actions .button-excluir:hover {
+  border: 2px solid #ff0000;
+  color: #ffffff;
+  background: #ff0000;
+}
+
+/* --- area que contém toda a lista de contatos --- */
+
+.contacts {
+  max-height: 250px;/* ativa rolagem se tiver muitos contatos */
+  overflow-y: auto;    
+  padding-right: 8px;
+  margin-top: 15px;
+}
+
+/* --- barra de rolagem personalizada --- */
+
+.contacts::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contacts::-webkit-scrollbar-thumb {
+  background: #40c771;
+  border-radius: 4px;
+}
+
+.contacts::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
